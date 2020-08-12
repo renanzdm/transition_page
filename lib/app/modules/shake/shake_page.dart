@@ -15,27 +15,29 @@ class _ShakePageState extends State<ShakePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[
-          ShakeTransition(
-            axis: Axis.horizontal,
-            offset: 150,
-            child: Padding(
-              padding: const EdgeInsets.all(50.0),
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ShakeTransition(
+              duration: const Duration(seconds: 2),
+              axis: Axis.horizontal,
+              offset: 150,
               child: Text(
                 'Hello Guys',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
-          ),
-          ShakeTransition(
-            duration: const Duration(seconds: 2),
-            axis: Axis.vertical,
-            offset: 300,
-            child: Padding(
-                padding: const EdgeInsets.all(50.0), child: FlutterLogo()),
-          ),
-        ],
+            ShakeTransition(
+              duration: const Duration(seconds: 2),
+              axis: Axis.vertical,
+              offset: 200,
+              child: Padding(
+                  padding: const EdgeInsets.all(50.0), child: FlutterLogo()),
+            ),
+          ],
+        ),
       ),
     );
   }
